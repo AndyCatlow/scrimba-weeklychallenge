@@ -24,7 +24,7 @@
 .hero::before {
   content: "";
   background-size: cover;
-  background-position: right;
+  background-position: center;
   /* background image here */
   background-image: url(./images/photographer.jpg);
   position: absolute;
@@ -38,13 +38,16 @@
 
 .gradient-border {
   /* and here */
-  border-top: 5px solid red;
+  padding: 0.2em 1em;
+  border-top: solid 5px;
+  border-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(255, 165, 0)) 1;
 }
 
 .site-title {
   max-width: 60vw;
   text-align: center;
   line-height: 1.5;
+  font-weight: 400;
 }
 
 strong,
