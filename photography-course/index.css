@@ -38,13 +38,16 @@
 
 .gradient-border {
   /* and here */
-  padding: 0.2em 1em;
+  max-width: 60vw;
+  min-width: max-content;
+  padding: 0.2em 20vw;
   border-top: solid 5px;
   border-image: linear-gradient(90deg, rgb(255, 0, 0), rgb(255, 165, 0)) 1;
 }
 
 .site-title {
   max-width: 60vw;
+  min-width: min-content;
   text-align: center;
   line-height: 1.5;
   font-weight: 400;
@@ -60,9 +63,11 @@ strong,
   /* your code here */
   font-family: inherit;
   letter-spacing: inherit;
+  text-transform: uppercase;
   color: white;
   background: linear-gradient(90deg, rgb(255, 0, 0), rgb(255, 165, 0));
-  padding: 1.5em 5em;
+  padding: 1.5em 10vw;
+  min-width: 10em;
   border-radius: 10px;
   transition: all ease-in-out 500ms;
 }
