@@ -51,7 +51,6 @@ body {
 
   border-top: solid 8px;
   border-image: var(--gradient) 1;
-  transform: translateZ(var(--level_1));
 }
 .card {
   margin: 10vh auto;
@@ -167,4 +166,7 @@ strong,
   font-size: 10px;
   background: transparent;
   /* transform: translateZ(var(--level_3)); */
+}
+.hero p:last-child {
+  margin-bottom: 1em;
 }
