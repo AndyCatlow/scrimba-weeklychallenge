@@ -51,6 +51,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-weight: 700;
+  transition: all 0.5s ease-in-out;
 }
 .input__box {
   border: none;
@@ -59,12 +60,16 @@ body {
   width: var(--width);
   height: var(--height);
   box-shadow: var(--shadow);
+  background-color: white;
 }
 .input__box:hover ~ .form__label,
 .input__box:focus ~ .form__label {
-  top: 5px;
-  left: 20%;
-  background-color: #fff;
+  transform: translate(90%, 0) scale(0.75);
+  transform-origin: right;
+}
+
+.input__box:valid + .form__label {
+  color: transparent;
 }
 
 .btn {
