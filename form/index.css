@@ -11,21 +11,26 @@
   --pill: 50px;
   --width: 100%;
   --height: 100%;
-  --shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.2);
-  --clr-prmy: #ff53ce;
-  --clr-scdy: #8df089;
-  --clr-hlt: #a34d8b;
-  --clr-foc: #793967;
+  --shadow: 2px 2px 3px 3px rgba(var(--clr-foc-num), 0.2);
+  --clr-prmy: rgb(255, 83, 206);
+  --clr-scdy: rgb(141, 240, 137);
+  --clr-hlt: rgb(163, 77, 139);
+  --clr-foc: rgb(var(--clr-foc-num));
+  --clr-foc-num: 121, 57, 103;
 }
 
 body {
+  font-family: "Exo", sans-serif;
+}
+
+.form__container {
   display: grid;
   place-items: center;
   height: 100vh;
-  font-family: "Exo", sans-serif;
   background-image: linear-gradient(135deg, var(--clr-prmy), var(--clr-scdy));
 }
 
+/* Flex wrap in the form element allows responsive layout without media queries */
 .form {
   display: flex;
   flex-wrap: wrap;
@@ -35,12 +40,13 @@ body {
   padding: 2em;
   width: 100vw;
 }
+/* decides size of buttons and fields */
 .form > * {
   flex: 1 1 100%;
   max-width: 200px;
   min-width: 100px;
 }
-
+/* putting the form elements in groups allows for better control */
 .form__group {
   position: relative;
   display: inline;
@@ -54,6 +60,7 @@ body {
   transition: all 0.5s ease-in-out;
 }
 .input__box {
+  box-sizing: border-box;
   border: none;
   border-radius: var(--pill);
   padding: 1em;
@@ -62,16 +69,19 @@ body {
   box-shadow: var(--shadow);
   background-color: white;
 }
-.input__box:hover ~ .form__label,
-.input__box:focus ~ .form__label {
-  transform: translate(90%, 0) scale(0.75);
-  transform-origin: right;
-}
-
+/* for this to work to label must be after the input in the html*/
+/* .input__box:hover + .form__label, */
+.input__box:focus + .form__label,
 .input__box:valid + .form__label {
-  color: transparent;
+  transform: translate(90%, 0) scale(0.8);
+  transform-origin: right;
+  color: rgba(var(--clr-foc-num), 0.9);
 }
-
+/* the valid selector needs "required" in the input attributes in the html.
+This hides the label when the field has been filled in.*/
+.input__box:valid + .form__label {
+  color: rgba(var(--clr-foc-num), 0.4);
+}
 .btn {
   display: inline;
   padding: 1em 2em;
@@ -85,10 +95,11 @@ body {
   background-color: var(--clr-hlt);
   color: #fff;
   font-weight: 700;
+  transition: all 0.2s ease-in-out;
 }
-
+/* rotates the button on hover and focus */
 .btn:hover,
 .btn:focus {
-  transform: rotate(10deg);
+  transform: rotate(5deg);
   background-color: var(--clr-foc);
 }
