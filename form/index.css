@@ -22,14 +22,13 @@
 body {
   font-family: "Exo", sans-serif;
 }
-
+/* grid and place-items: center is a really easy way of getting things centered, but remember to give a heigth for the container */
 .form__container {
   display: grid;
   place-items: center;
   height: 100vh;
   background-image: linear-gradient(135deg, var(--clr-prmy), var(--clr-scdy));
 }
-
 /* Flex wrap in the form element allows responsive layout without media queries */
 .form {
   display: flex;
@@ -70,7 +69,7 @@ body {
   background-color: white;
 }
 /* for this to work to label must be after the input in the html*/
-/* .input__box:hover + .form__label, */
+/* .input__box:hover + .form__label,  */
 .input__box:focus + .form__label,
 .input__box:valid + .form__label {
   transform: translate(90%, 0) scale(0.8);
@@ -82,12 +81,11 @@ This hides the label when the field has been filled in.*/
 .input__box:valid + .form__label {
   color: rgba(var(--clr-foc-num), 0.4);
 }
+
 .btn {
   display: inline;
   padding: 1em 2em;
   border-radius: var(--pill);
-  width: var(--width);
-  height: var(--height);
   font-family: inherit;
   border: none;
   cursor: pointer;
