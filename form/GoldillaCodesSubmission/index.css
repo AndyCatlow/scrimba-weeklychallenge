@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Exo, Arial, sans-serif;
+  font-weight: 700;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  height: 350px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #be45a8;
+  background-image: linear-gradient(to top left, #be45a8, #b3e2fa);
+}
+
+input,
+button {
+  font-weight: inherit;
+  border-radius: 20px;
+  border: none;
+  padding: 1em 2em;
+}
+
+input {
+  text-align: center;
+  margin: 0.5em;
+}
+
+button {
+  background-color: #b43ae3;
+  color: #ffffff;
+  min-width: 225px;
+  margin-top: 0;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  transform: rotate(3deg);
+  color: #b3e2fa;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.element {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 350px;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease;
+}
+
+.front img {
+  width: 100%;
+  height: auto;
+}
+
+.back {
+  background: linear-gradient(to bottom right, #be45a8, #b3e2fa);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  box-sizing: border-box;
+}
+
+.pname {
+  font-family: "Train One", cursive;
+  font-size: 48px;
+  font-weight: bold;
+  color: #b3e2fa;
+}
+
+.description {
+  font-family: "Exo", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #be45a8;
+  margin: 20px 0;
+}
+
+.back-content {
+  padding: 0 40px;
+}
+
+.icons .fa {
+  font-size: 22px;
+  font-weight: bold;
+  color: #b13ae2;
+}
+
+.element .back-content {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.element:hover .front {
+  width: 100px;
+  height: 100px;
+  left: calc(100% - 50px);
+  top: calc(100% - 30px);
+}
+
+.element:hover .front img {
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px #b3e2fa;
+  width: 100%;
+}
+
+.element:hover .back-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+@media only screen and (min-width: 620px) {
+  form {
+    flex-direction: row;
+    object-fit: cover;
+    max-width: 800px;
+    padding: 1em;
+  }
+  input {
+    max-width: 200px;
+    margin: 1em;
+  }
+  .hero {
+    max-width: 800px;
+  }
+  front img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+}
