@@ -14,47 +14,49 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="index.css" />
+    <script src="index.pack.js" defer></script>
   </head>
   <body>
-    <hero>
-      <div class="element">
-        <div class="front">
-          <img src="girl.jpg" alt="girl with a poodle dog in Paris" />
-        </div>
-        <div class="back">
-          <div class="back-content">
-            <div class="pname">Stylish Girl</div>
-            <div class="description">
-              Be a dog lover!<br />Stay in style...<br />with nature!
-            </div>
-            <div class="icons">
-              <i class="fa fa-facebook"></i>
-              <i class="fa fa-twitter"></i>
-              <i class="fa fa-instagram"></i>
+    <div class="grid__container">
+      <hero>
+        <div class="element">
+          <div class="front">
+            <img src="girl.jpg" alt="girl with a poodle dog in Paris" />
+          </div>
+          <div class="back">
+            <div class="back-content">
+              <div class="pname">Stylish Girl</div>
+              <div class="description">
+                Be a dog lover!<br />Stay in style...<br />with nature!
+              </div>
+              <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </hero>
-    <section class="form__container">
-      <form action="#" method="POST">
-        <input
-          aria-label="name"
-          type="text"
-          placeholder="name"
-          type="text"
-          required
-        />
-        <input
-          aria-label="email"
-          type="email"
-          placeholder="email"
-          type="email"
-          required
-        />
-        <button type="submit">Sign up</button>
-      </form>
-    </section>
-    <script src="index.pack.js"></script>
+      </hero>
+      <section class="form__container">
+        <form action="#" method="POST">
+          <input
+            aria-label="name"
+            type="text"
+            placeholder="name"
+            type="text"
+            required
+          />
+          <input
+            aria-label="email"
+            type="email"
+            placeholder="email"
+            type="email"
+            required
+          />
+          <button type="submit">Sign up</button>
+        </form>
+      </section>
+    </div>
   </body>
 </html>
