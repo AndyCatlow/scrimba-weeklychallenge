@@ -12,61 +12,35 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <nav class="nav" id="nav">
-      <ul>
-        <li class="nav-list-item close-menu">
-          <span class="material-icons-outlined">arrow_forward</span>
-        </li>
-        <li class="nav-list-item">
-          <a href="#" class="nav-link">About</a>
-        </li>
-        <li class="nav-list-item">
-          <a href="#" class="nav-link">Dates</a>
-        </li>
-        <li class="nav-list-item">
-          <a href="#" class="nav-link">Tickets</a>
-        </li>
-        <li class="nav-list-item">
-          <a href="#" class="nav-link">Reviews</a>
-        </li>
-      </ul>
-    </nav>
     <div class="container" id="container">
-      <div class="open-menu">
-        <span class="material-icons-outlined">arrow_back</span>
-      </div>
+      <nav class="nav" id="nav">
+        <ul>
+          <li class="close-menu"></li>
+          <li class="nav-list-item">
+            <a href="#" class="nav-link">About</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="nav-link">Dates</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="nav-link">Tickets</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#" class="nav-link">Reviews</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="open-menu"></div>
       <h1>Llama Trekking</h1>
       <p>
         Come and trek with totally awesome llamas in the beautiful countryside.
         Walk side-byside with these calm and docile animals and learn fun llama
         facts at the same time.
       </p>
-      <img src="llamas.jpg" alt="llamas on a mountainside" />
+      <div class="img__container">
+        <img id="llama" src="./images/0.jpg" alt="llamas on a mountainside" />
+      </div>
     </div>
     <script src="index.js"></script>
   </body>
-  <svg
-    xmlns="//www.w3.org/2000/svg"
-    version="1.1"
-    class="svg-filters"
-    style="display: none"
-  >
-    <defs>
-      <filter id="marker-shape">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0 0.15"
-          numOctaves="1"
-          result="warp"
-        />
-        <feDisplacementMap
-          xChannelSelector="R"
-          yChannelSelector="G"
-          scale="30"
-          in="SourceGraphic"
-          in2="warp"
-        />
-      </filter>
-    </defs>
-  </svg>
 </html>
