@@ -17,7 +17,7 @@ let toggleNav = () => {
   nav.classList.toggle("active-nav");
 };
 
-llama.addEventListener("click", function (e) {
+llama.addEventListener("click", () => {
   let random = Math.floor(Math.random() * 10);
   llama.src = `./images/${random}.jpg`;
 });

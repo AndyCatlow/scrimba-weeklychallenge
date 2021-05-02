@@ -39,7 +39,8 @@ p {
 }
 
 img {
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   margin: 2em auto;
 }
 
@@ -74,14 +75,14 @@ ul {
   overflow-x: hidden;
   visibility: hidden;
   padding: 0 0.25em;
-
+  cursor: url("./iconmonstr-cat-8.svg"), pointer;
   transition: all 0.5s ease-in-out;
 }
 
 .nav-list-item {
   list-style-type: none;
   padding: 0.5em 2em;
-  margin-right: 4em;
+  cursor: url("./iconmonstr-cat-8.svg"), pointer;
 }
 
 .nav-list-item:hover {
@@ -92,11 +93,13 @@ ul {
   /*padding: 0px 20px;*/
   background-repeat: no-repeat;
   background-size: cover;
+  cursor: url("./iconmonstr-cat-8.svg"), pointer;
 }
 
 .nav-link {
   text-decoration: none;
   color: black;
+  cursor: url("./iconmonstr-cat-8.svg"), pointer;
 }
 
 .nav-list-item:hover .nav-link,
@@ -105,24 +108,31 @@ ul {
 .nav-list-item:focus .close-menu-icon {
   color: white;
 }
-
+.open-menu {
+  transform: rotate(180deg);
+  padding-top: 1.25em;
+}
 .open-menu,
 .close-menu {
   width: 3%;
   margin-left: auto;
-  margin-right: 1em;
   padding: 1em;
   list-style: none;
-  cursor: pointer;
+  cursor: url("./iconmonstr-cat-8.svg"), pointer;
+}
+.close-menu {
+  margin-right: 1em;
 }
 
 .open-menu:hover,
 .close-menu:hover,
 .open-menu:focus,
 .close-menu:focus {
-  color: #ff69b4;
+  fill: #ff69b4;
 }
-
+svg:hover {
+  fill: #ff69b4;
+}
 /*-------
 toggle styles
 --------*/
@@ -133,9 +143,7 @@ toggle styles
 
 .active-nav {
   visibility: visible;
-  width: 35%;
-  opacity: 100% !important;
-  z-index: 2;
+  width: min-content;
   transition: all 0.5s ease-in-out;
 }
 
