@@ -75,14 +75,14 @@ ul {
   overflow-x: hidden;
   visibility: hidden;
   padding: 0 0.25em;
-  cursor: url("./iconmonstr-cat-8.svg"), pointer;
+  cursor: url("./iconmonstr-cat-7.svg"), pointer;
   transition: all 0.5s ease-in-out;
 }
 
 .nav-list-item {
   list-style-type: none;
   padding: 0.5em 2em;
-  cursor: url("./iconmonstr-cat-8.svg"), pointer;
+  cursor: url("./iconmonstr-cat-7.svg"), pointer;
 }
 
 .nav-list-item:hover {
@@ -93,13 +93,13 @@ ul {
   /*padding: 0px 20px;*/
   background-repeat: no-repeat;
   background-size: cover;
-  cursor: url("./iconmonstr-cat-8.svg"), pointer;
+  cursor: url("./iconmonstr-cat-7.svg"), pointer;
 }
 
 .nav-link {
   text-decoration: none;
   color: black;
-  cursor: url("./iconmonstr-cat-8.svg"), pointer;
+  cursor: url("./iconmonstr-cat-7.svg"), pointer;
 }
 
 .nav-list-item:hover .nav-link,
@@ -118,7 +118,7 @@ ul {
   margin-left: auto;
   padding: 1em;
   list-style: none;
-  cursor: url("./iconmonstr-cat-8.svg"), pointer;
+  cursor: url("./iconmonstr-cat-7.svg"), pointer;
 }
 .close-menu {
   margin-right: 1em;
