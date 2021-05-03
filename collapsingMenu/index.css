@@ -14,7 +14,7 @@ body {
 
 .outer__container {
   width: 70vw;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0 auto;
   max-width: 800px;
   position: relative;
@@ -43,7 +43,7 @@ h1 {
   text-align: center;
   background-color: hsla(330, 100%, 71%, 0.411);
   backdrop-filter: blur(5px);
-  width: max-content;
+  min-width: min-content;
 }
 
 p {
@@ -59,7 +59,7 @@ p {
 
 img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 50vh;
   margin: 2em auto;
   border: 3px solid hsl(0, 0%, 80%);
   border-radius: 5px;
@@ -151,8 +151,15 @@ ul {
 .close-menu:focus {
   fill: #ff69b4;
 }
-svg:hover {
+
+svg {
+  transform: scale(1);
+  transition: all 0.5s ease-in-out;
+}
+svg:hover,
+svg:focus {
   fill: #ff69b4;
+  transform: scale(1.3) translateX(0.5em);
 }
 /*-------
 toggle styles
@@ -160,18 +167,11 @@ toggle styles
 
 .inactive-container {
   opacity: 60%;
+  filter: blur(2px);
 }
 
 .active-nav {
   visibility: visible;
   width: 200px;
   opacity: 1;
-}
-
-.arrow:hover {
-  fill: hotpink;
-}
-.open-arrow {
-  width: 50px;
-  height: 50px;
 }
