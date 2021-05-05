@@ -49,4 +49,24 @@ body {
 .btn-next {
   color: greenyellow;
   border-color: greenyellow;
+  transition: background 250ms ease;
+  position: relative;
+}
+
+.btn-next::before {
+  content: "";
+  background: rgba(172, 255, 47, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease;
+}
+
+.btn-next:hover::before {
+  transform: scaleX(1);
+  box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
 }
