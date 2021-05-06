@@ -26,6 +26,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-size: 1em;
   letter-spacing: 1px;
+  position: relative;
 }
 
 .btn:hover,
@@ -50,7 +51,6 @@ body {
   color: greenyellow;
   border-color: greenyellow;
   transition: background 250ms ease;
-  position: relative;
 }
 
 .btn-next::before {
@@ -65,10 +65,26 @@ body {
   transform-origin: left;
   transition: transform 250ms ease;
 }
+.btn-back::before {
+  content: "";
+  background: rgba(255, 105, 180, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease;
+}
 
 /* transition of a scale gives better performance according to KP */
 
 .btn-next:hover::before {
   transform: scaleX(1);
   box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
+}
+.btn-back:hover::before {
+  transform: scaleX(1);
+  box-shadow: 0 0 2em 0.5em rgba(255, 105, 180, 0.4);
 }
