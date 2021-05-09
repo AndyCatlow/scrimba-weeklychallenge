@@ -65,8 +65,8 @@ body {
   transform-origin: right;
 }
 
-.btn-back:focus,
-.btn-back:hover {
+.btn-back:focus::before,
+.btn-back:hover::before {
   box-shadow: 0 0 2em 0.5em rgba(255, 105, 180, 0.4),
     inset 0 0 1em 0.2em rgba(255, 105, 180, 0.4);
   background-position: left;
@@ -102,8 +102,8 @@ body {
   transform-origin: left;
 }
 
-.btn-next:focus,
-.btn-next:hover {
+.btn-next:focus::before,
+.btn-next:hover::before {
   box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
 }
 
