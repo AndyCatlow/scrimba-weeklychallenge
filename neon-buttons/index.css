@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -34,24 +35,7 @@ body {
 .btn:focus {
   cursor: pointer;
   color: white;
-}
-
-/* back button */
-.btn-back {
-  color: hotpink;
-  border-color: hotpink;
-}
-
-/* refresh button */
-.btn-refresh {
-  color: orange;
-  border-color: orange;
-}
-
-/* back next */
-.btn-next {
-  color: greenyellow;
-  border-color: greenyellow;
+  /* border-width: 5px; */
 }
 
 .btn::before {
@@ -61,41 +45,66 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  transition: transform 400ms ease;
+  transition: transform 1400ms ease;
 }
-
-.btn-next::before {
-  background: rgba(172, 255, 47, 0.5);
-  transform: scaleX(0);
-  transform-origin: left;
-}
-.btn-back::before {
-  background: rgba(255, 105, 180, 0.5);
-  transform: scaleX(0);
-  transform-origin: right;
-}
-.btn-refresh::before {
-  background: rgba(255, 165, 0, 0.5);
-  transform: scale(0);
-  transform-origin: center;
-}
-
-/* transition of a scale gives better performance according to KP */
 
 .btn:focus::before,
 .btn:hover::before {
   transform: scale(1);
 }
 
-.btn-next:focus::before,
-.btn-next:hover::before {
-  box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
+/* back button */
+.btn-back {
+  color: hotpink;
+  border-color: hotpink;
 }
-.btn-back:focus::before,
-.btn-back:hover::before {
-  box-shadow: 0 0 2em 0.5em rgba(255, 105, 180, 0.4);
+
+.btn-back::before {
+  background: rgba(255, 105, 180, 0.3);
+  transform: scaleX(0);
+  transform-origin: right;
 }
+
+.btn-back:focus,
+.btn-back:hover {
+  box-shadow: 0 0 2em 0.5em rgba(255, 105, 180, 0.4),
+    inset 0 0 1em 0.2em rgba(255, 105, 180, 0.4);
+  background-position: left;
+  /* transform: scaleX(2); */
+}
+
+/* refresh button */
+.btn-refresh {
+  color: orange;
+  border-color: orange;
+}
+
+.btn-refresh::before {
+  background: rgba(255, 165, 0, 0.3);
+  transform: scale(0);
+  transform-origin: center;
+}
+
 .btn-refresh:focus::before,
 .btn-refresh:hover::before {
   box-shadow: 0 0 2em 0.5em rgba(255, 165, 0, 0.5);
 }
+
+/* back next */
+.btn-next {
+  color: greenyellow;
+  border-color: greenyellow;
+}
+
+.btn-next::before {
+  background: rgba(172, 255, 47, 0.3);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn-next:focus,
+.btn-next:hover {
+  box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
+}
+
+/* transition of a scale gives better performance according to KP */
