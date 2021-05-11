@@ -7,6 +7,7 @@ body {
 
 body {
   background-color: black;
+  position: relative;
 }
 
 .container {
@@ -34,7 +35,7 @@ body {
 .btn:hover,
 .btn:focus {
   cursor: pointer;
-  color: white;
+  /* color: white; */
   /* border-width: 5px; */
 }
 
@@ -107,18 +108,43 @@ body {
   box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
 }
 
+.btn-fireworks {
+  color: black;
+  border: black;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.btn-fireworks:hover {
+  color: tomato;
+  border: tomato 1px solid;
+}
+
 /* transition of a scale gives better performance according to KP */
+
+.btn-escape {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+}
 
 /* fireworks */
 
 .firework {
   height: 100vh;
   width: 100vw;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #2c2f69;
+  overflow: hidden;
+  z-index: 5;
+  display: none;
 }
 .firework__container {
   position: absolute;
@@ -142,8 +168,6 @@ body {
   right: 0;
   top: 100%;
   height: 40px;
-  background-color: #f5cf52;
-  animation: explosion 2s ease-in-out infinite;
 }
 
 @keyframes explosion {
@@ -159,16 +183,68 @@ body {
 #firework--1 {
   left: 50%;
   top: 50%;
+  transform: scale(1);
+}
+
+#firework--1 .explosion::before {
+  background-color: #f5cf52;
+  animation: explosion 2s ease-in-out infinite;
 }
 
 #firework--2 {
   left: 40%;
   top: 45%;
+  transform: scale(0.7);
+}
+
+#firework--2 .explosion::before {
+  background-color: #f55252;
+  animation: explosion 2s 0.6s ease-in-out infinite;
 }
 
 #firework--3 {
   left: 60%;
   top: 65%;
+  transform: scale(0.4);
+}
+
+#firework--3 .explosion::before {
+  background-color: #f552f5;
+  animation: explosion 2s 0.3s ease-in-out infinite;
+}
+
+#firework--4 {
+  left: 20%;
+  top: 25%;
+  transform: scale(0.4);
+}
+
+#firework--4 .explosion::before {
+  background-color: #6df552;
+  animation: explosion 2s 0.4s ease-in-out infinite;
+}
+
+#firework--5 {
+  left: 80%;
+  top: 30%;
+  transform: scale(1.1);
+}
+
+#firework--5 .explosion::before {
+  background-color: #52f0f5;
+  animation: explosion 1.5s 0.2s ease-in-out infinite;
+}
+
+#firework--6 {
+  width: 1px;
+  left: 50%;
+  top: 35%;
+  transform: scale(2);
+}
+
+#firework--6 .explosion::before {
+  background-color: #a652f5;
+  animation: explosion 2s 3.6s ease-in-out infinite;
 }
 
 .explosion:nth-child(1) {
