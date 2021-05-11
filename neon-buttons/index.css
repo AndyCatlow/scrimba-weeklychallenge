@@ -108,6 +108,10 @@ body {
   box-shadow: 0 0 2em 0.5em rgba(172, 255, 47, 0.4);
 }
 
+.btn-change {
+  color: yellow;
+}
+
 .btn-fireworks {
   color: black;
   border: black;
@@ -129,7 +133,9 @@ body {
   right: 0;
   color: white;
 }
-
+.hide {
+  display: none;
+}
 /* fireworks */
 
 .firework {
@@ -144,6 +150,9 @@ body {
   background-color: #2c2f69;
   overflow: hidden;
   z-index: 5;
+  /* display: none; */
+}
+.hide {
   display: none;
 }
 .firework__container {
