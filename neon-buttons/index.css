@@ -198,6 +198,85 @@ body {
   border-radius: 5px;
   transform: translateZ(-50px);
 }
+
+/* decoy escape button */
+
+.btn-decoy-container {
+  position: absolute;
+  left: 75%;
+  top: 75%;
+}
+
+.btn-decoy {
+  position: relative;
+  border: none;
+  background: #2c2f69;
+  color: #2c2f69;
+}
+
+.btn-decoy::before,
+.btn-decoy::after {
+  content: "";
+  width: 3px;
+  height: 100%;
+  position: absolute;
+
+  /* top: -100%; */
+}
+
+.btn-decoy::before {
+  /* background-color: yellow; */
+  left: 0;
+
+  transform-origin: bottom left;
+}
+.btn-decoy::after {
+  /* background-color: hotpink; */
+  left: 100%;
+
+  transform-origin: bottom right;
+}
+
+.btn-decoy-container:hover .btn-decoy::before {
+  background: linear-gradient(#2c2f69, white, #2c2f69);
+  animation: arrowUpLeft 2s linear forwards;
+}
+.btn-decoy-container:hover .btn-decoy::after {
+  background: linear-gradient(#2c2f69, white, #2c2f69);
+  animation: arrowUpRight 2s linear forwards;
+}
+
+@keyframes arrowUpLeft {
+  0% {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -100%;
+    transform: rotate(45deg);
+  }
+  100% {
+    top: -150%;
+    height: 140%;
+    transform: rotate(45deg);
+  }
+}
+@keyframes arrowUpRight {
+  0% {
+    bottom: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: -100%;
+    transform: rotate(-45deg);
+  }
+  100% {
+    top: -150%;
+    height: 140%;
+    transform: rotate(-45deg);
+  }
+}
+
 /* fireworks */
 
 .firework {
