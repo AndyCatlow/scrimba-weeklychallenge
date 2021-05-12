@@ -12,6 +12,7 @@ body {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -160,20 +161,31 @@ body {
 }
 
 /* escape firework button */
+.btn-escape-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  /* border: 3px solid red; */
+}
 .btn-escape {
   position: absolute;
   bottom: 0;
   left: 0;
+  width: 200px;
+  height: 100px;
   color: #2c2f69;
   background-color: #2c2f69;
   border: #2c2f69 2px solid;
   transition: all 3s ease-in-out;
+  transform-style: preserve-3d;
+  /* margin: 2em; */
 }
 
 .btn-escape-container:hover .btn-escape,
 .btn-escape-container:focus .btn-escape {
   background: linear-gradient(90deg, #2c2f69, #5259dd, #52f0f56e);
-  /* box-shadow: -50px 0px 50px 0px #52f0f549; */
   transform-style: preserve-3d;
   transform: rotateY(-180deg);
   color: white;
@@ -181,6 +193,7 @@ body {
 
 .btn-escape-text {
   transform: translateZ(-100px) rotateY(180deg);
+  transform-style: preserve-3d;
 }
 
 .hide {
@@ -196,6 +209,7 @@ body {
   left: 1em;
   border: 3px solid white;
   border-radius: 5px;
+  transform-style: preserve-3d;
   transform: translateZ(-50px);
 }
 
@@ -212,6 +226,7 @@ body {
   border: none;
   background: #2c2f69;
   color: #2c2f69;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
 .btn-decoy::before,
@@ -483,4 +498,119 @@ body {
 }
 .explosion:nth-child(12) {
   transform: rotate(330deg) translateY(-15px);
+}
+
+/* rain button */
+
+.btn-rain {
+  border: 2px solid rebeccapurple;
+  color: rebeccapurple;
+  max-width: 100vw;
+  padding: 0.7em;
+}
+.btn-rain-text {
+  line-height: 0;
+}
+#not {
+  color: transparent;
+}
+
+#dont {
+  color: transparent;
+  transition: color 1s ease;
+  position: relative;
+}
+
+.btn-rain:hover #dont {
+  color: rebeccapurple;
+}
+/* #me {
+  transition: color 2s ease-in-out;
+}
+.btn-rain:hover #me {
+  color: transparent;
+} */
+
+#dont::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: red;
+  position: absolute;
+  bottom: -2px;
+  transform: scale(0);
+  transform-origin: right;
+  transition: transform 1s ease 0.5s;
+}
+
+.btn-rain:hover #dont::before {
+  transform: scale(1);
+}
+
+.cat-container {
+  position: absolute;
+  top: -50;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cat {
+  background-image: url("./iconmonstr-cat-5.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
+
+.cat1 {
+  left: 0;
+  animation: rain1 3s linear infinite;
+}
+.cat2 {
+  left: 10%;
+  animation: rain1 2s linear 40ms infinite;
+}
+.cat3 {
+  left: 20%;
+  animation: rain1 3.5s linear 140ms infinite;
+}
+.cat4 {
+  left: 30%;
+  animation: rain1 1.2s linear 70ms infinite;
+}
+.cat5 {
+  left: 40%;
+  animation: rain1 2.4s linear 380ms infinite;
+}
+.cat6 {
+  left: 50%;
+  animation: rain1 1.7s linear 230ms infinite;
+}
+.cat7 {
+  left: 60%;
+  animation: rain1 1.3s linear 120ms infinite;
+}
+.cat8 {
+  left: 70%;
+  animation: rain1 0.8s linear 200ms infinite;
+}
+.cat9 {
+  left: 80%;
+  animation: rain1 1.9s linear 300ms infinite;
+}
+.cat10 {
+  left: 90%;
+  animation: rain1 2.3s linear 100ms infinite;
+}
+
+@keyframes rain1 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
 }
