@@ -237,11 +237,13 @@ body {
   transform-origin: bottom right;
 }
 
-.btn-decoy-container:hover .btn-decoy::before {
+.btn-decoy-container:hover .btn-decoy::before,
+.btn-decoy-container:focus .btn-decoy::before {
   background: linear-gradient(#2c2f69, white, #2c2f69);
   animation: arrowUpLeft 2s linear forwards;
 }
-.btn-decoy-container:hover .btn-decoy::after {
+.btn-decoy-container:hover .btn-decoy::after,
+.btn-decoy-container:focus .btn-decoy::after {
   background: linear-gradient(#2c2f69, white, #2c2f69);
   animation: arrowUpRight 2s linear forwards;
 }
@@ -317,10 +319,12 @@ body {
   background: linear-gradient(90deg, #2c2f69, white, #2c2f69);
 }
 
-.btn-decoy2-container:hover .btn-decoy2::before {
+.btn-decoy2-container:hover .btn-decoy2::before,
+.btn-decoy2-container:focus .btn-decoy2::before {
   transform: scale(1);
 }
-.btn-decoy2-container:hover .btn-decoy2::after {
+.btn-decoy2-container:hover .btn-decoy2::after,
+.btn-decoy2-container:focus .btn-decoy2::after {
   transform: scale(1);
 }
 
