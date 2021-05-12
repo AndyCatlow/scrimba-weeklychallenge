@@ -277,6 +277,53 @@ body {
   }
 }
 
+/* second decoy */
+.btn-decoy2-container {
+  position: absolute;
+  left: 75%;
+  top: 20%;
+}
+
+.btn-decoy2 {
+  position: relative;
+  border: none;
+  background: none;
+  color: transparent;
+}
+
+.btn-decoy2::before,
+.btn-decoy2::after {
+  content: "";
+  position: absolute;
+}
+
+.btn-decoy2::before {
+  /* background-color: yellow; */
+  left: 0;
+  width: 3px;
+  height: 100%;
+  transform: scale(0);
+  transform-origin: top;
+  background: linear-gradient(#2c2f69, white, #2c2f69);
+}
+.btn-decoy2::after {
+  /* background-color: hotpink; */
+  right: 0;
+  top: 100%;
+  height: 3px;
+  width: 100%;
+  transform: scale(0);
+  transform-origin: right;
+  background: linear-gradient(90deg, #2c2f69, white, #2c2f69);
+}
+
+.btn-decoy2-container:hover .btn-decoy2::before {
+  transform: scale(1);
+}
+.btn-decoy2-container:hover .btn-decoy2::after {
+  transform: scale(1);
+}
+
 /* fireworks */
 
 .firework {
